@@ -7,6 +7,26 @@ namespace Day1_variables
 
         static void Main(string[] args)
         {
+            //Izvade
+            int a = 3;
+            a = 3 + 2;
+
+            Console.WriteLine("aaaaa");
+            Console.WriteLine(a+3);
+            Console.WriteLine(a);
+
+            String b = "aa";
+            String c = "cc";
+
+            Console.WriteLine(b + " " + c);
+
+            //Ievade
+            String ievade = Console.ReadLine();
+            Console.WriteLine(ievade);
+        }
+
+        static void piemers1()
+        {
             //---------------
             //mainigo tipi
             int a = 3;  //vesels skaitlis (no anglu val.- Integer)
