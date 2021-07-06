@@ -7,12 +7,27 @@ namespace Day1_variables
 
         static void Main(string[] args)
         {
+            String pirmaisJautajums = "1. Ka Jus sauc?";
+            Console.WriteLine(pirmaisJautajums);
+            String ievade;
+            ievade = Console.ReadLine();
+            Console.WriteLine(ievade);
+
+            Console.WriteLine("2. No kurienes Jus esat?");
+            String ievade2 = Console.ReadLine();
+            Console.WriteLine(ievade2);
+
+            Console.WriteLine("Cilveks " + ievade + " ir no " + ievade2);
+        }
+
+        static void piemers2()
+        {
             //Izvade
             int a = 3;
             a = 3 + 2;
 
             Console.WriteLine("aaaaa");
-            Console.WriteLine(a+3);
+            Console.WriteLine(a + 3);
             Console.WriteLine(a);
 
             String b = "aa";
