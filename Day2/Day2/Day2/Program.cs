@@ -6,7 +6,39 @@ namespace Day2
     {
         static void Main(string[] args)
         {
-            Piemers5();
+            Uzdevums5();
+        }
+
+        static void Uzdevums5()
+        {
+            Console.WriteLine("Ievadiet 1. skaitli!");
+            String input = Console.ReadLine();
+
+            int number1 = Convert.ToInt32(input);
+
+            Console.WriteLine("Ievadiet 2. skaitli!");
+            input = Console.ReadLine();
+
+            int number2 = Convert.ToInt32(input);
+
+            Console.WriteLine("Ievadiet + vai -");
+            input = Console.ReadLine();
+
+            if(input == "+")
+            {
+                Console.WriteLine(number1 + number2);
+            }
+            else if(input == "-")
+            {
+                Console.WriteLine(number1 - number2);
+            }
+            else
+            {
+                Console.WriteLine("Ievades kluda!");
+            }
+
+            
+            
         }
 
         static void Piemers5()
@@ -90,12 +122,12 @@ namespace Day2
 
         static void Piemers2()
         {
-            // ==
-            // !=
-            // >
-            // <
-            // <=
-            // >=
+            // == - vienads
+            // != - nav vienads
+            // > - lielaks
+            // < - mazaks
+            // <= - lielaks/vienads
+            // >= - mazaks/vienads
 
             Console.WriteLine("Ievadiet paroli!");  
             String psw = Console.ReadLine();
