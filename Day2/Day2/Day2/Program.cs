@@ -6,15 +6,70 @@ namespace Day2
     {
         static void Main(string[] args)
         {
-            //Piemers3();
+            Piemers5();
+        }
 
-            String a = "aaaaa";
+        static void Piemers5()
+        {
+            // && -> Un
+            // || -> Vai
 
-            int b = a.Length;
+            //Parbaudit vai skaitlis ir no 1..18
+            //ja ir diapazona, izvadit True
+            //ja nav izvadit False
 
-            Console.WriteLine(a.Length);
-            //vai ari
-            Console.WriteLine(b);
+            Console.WriteLine("Ievadiet vecumu!");
+            String input = Console.ReadLine();
+            int age = Convert.ToInt32(input);
+
+            if (age > 0 && age < 19)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+
+        static void Piemers4()
+        {
+            Console.WriteLine("Ievadiet vecumu!");
+            String input = Console.ReadLine();
+            int age = Convert.ToInt32(input);
+
+            if (age > 17)
+            {
+                Console.WriteLine("Lietotajs ir pilngadigs!");
+            }
+            else if(age < 0)
+            {
+                Console.WriteLine("Jaievada skaitlis sakot ar 0.");
+            }
+            else
+            {
+                Console.WriteLine("Lietotajam vel nav 18!");
+            }
+        }
+
+        static void Uzdevums3()
+        {
+            Console.WriteLine("Ievadiet simbolu virkni!");
+            String virkne1 = Console.ReadLine();
+
+            Console.WriteLine("Ievadiet 2. simbolu virkni!");
+            String virkne2 = Console.ReadLine();
+
+            int kopejaisGarums = virkne1.Length + virkne2.Length;
+
+            if(kopejaisGarums > 10)
+            {
+                Console.WriteLine(virkne1 + "...");
+            }
+            else
+            {
+                Console.WriteLine(virkne1 + virkne2);
+            }
         }
 
         static void Piemers3()
