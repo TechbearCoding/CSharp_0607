@@ -6,11 +6,15 @@ namespace Day4_methods
     {
         static void Main(string[] args)
         {
-            String a = NameInput();
-            Console.WriteLine(a);
+            int size = SumLength("aa", "bbb", "cccc");
+            Console.WriteLine("Kopējais simbolu virknu garums ir " + size);
+        }
 
-            String b = NameInput();
-            Console.WriteLine(b);
+        static int SumLength(string a, string b, string c)
+        {
+            int totalsize = a.Length + b.Length + c.Length;
+
+            return totalsize;
         }
 
 
