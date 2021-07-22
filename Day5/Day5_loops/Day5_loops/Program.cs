@@ -7,6 +7,19 @@ namespace Day5_loops
         static void Main(string[] args)
         {
             //LoopSample3();
+            Uzdevums3();
+
+        }
+
+        static void Uzdevums3()
+        {
+            String stars = "";
+
+            for(int i = 0; i < 5; i++)
+            {
+                stars = stars + "*";
+                Console.WriteLine(stars);
+            }
 
         }
 
@@ -15,10 +28,11 @@ namespace Day5_loops
             //Saskaitīt un izvadīt skaitļus no 1-10
             int sum = 0;
 
-            for(int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 sum = sum + i;
             }
+            
 
             Console.WriteLine(sum);
         }
