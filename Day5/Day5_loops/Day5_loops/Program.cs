@@ -13,7 +13,7 @@ namespace Day5_loops
 
         static void Uzdevums3()
         {
-            String stars = "";
+            String stars = ""; 
 
             for(int i = 0; i < 5; i++)
             {
