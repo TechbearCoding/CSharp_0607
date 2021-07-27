@@ -6,7 +6,47 @@ namespace Day7_EvenMoreLoops
     {
         static void Main(string[] args)
         {
-            Kapinasana();
+            Piemers3();
+        }
+
+
+        static void Piemers3()
+        {
+            while (true)
+            {
+                Console.WriteLine("Hello!");
+                String choice = Console.ReadLine();
+
+                if(choice == "exit")
+                {
+                    break;
+                }
+            }
+        }
+
+        static void Piemers2()
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                Console.WriteLine(i);
+                i++;
+            }
+
+        }
+
+
+        static void Piemers1()
+        {
+            String choice = "";
+            while (choice != "EXIT")
+            {
+                Console.WriteLine("Hello!");
+
+                Console.WriteLine("Rakstat EXIT, lai izietu, jebko citu, lai turpinatu!");
+                choice = Console.ReadLine();
+            }
+
         }
 
 
