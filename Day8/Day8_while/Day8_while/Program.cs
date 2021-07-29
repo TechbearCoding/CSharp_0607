@@ -6,7 +6,22 @@ namespace Day8_while
     {
         static void Main(string[] args)
         {
-            Uzdevums1();
+            Uzdevums2();
+        }
+
+        static void Uzdevums2()
+        {
+            String choice = "";
+            int counter = 1;
+
+            while (choice != "exit")
+            {
+                Console.WriteLine("iteracija: " + counter);
+                counter++;
+
+                Console.WriteLine("Vai velaties turpinat darbu?");
+                choice = Console.ReadLine();
+            }
         }
 
         static void Uzdevums1()
