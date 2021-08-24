@@ -6,9 +6,14 @@ namespace Day7_EvenMoreLoops
     {
         static void Main(string[] args)
         {
-            Piemers3();
+            Piemers1();
         }
 
+
+        static void Uzdevums2()
+        {
+
+        }
 
         static void Piemers3()
         {
