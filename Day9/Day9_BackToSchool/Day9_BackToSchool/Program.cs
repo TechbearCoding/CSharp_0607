@@ -6,12 +6,22 @@ namespace Day9_BackToSchool
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(GenNumber());
+            int number = -1;
+            int sum = 0;
+
+            while (number != 0)
+            {
+                number = GenNumber();
+                sum = sum + number;
+                Console.WriteLine("Pasreizeja summa ir " + sum);
+            }
+
+            Console.WriteLine("Summa ir " + sum);
         }
 
         static int GenNumber()
         {
-            Console.WriteLine("ja geribi generet  spied 'y' ");
+            Console.WriteLine("Ja gribi generet  spied 'y' ");
 
             string input = Console.ReadLine();
 
