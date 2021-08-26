@@ -9,11 +9,46 @@ namespace Day9_BackToSchool
             int number = -1;
             int sum = 0;
 
+            int dealerSum = 0;
+            Random rnd = new Random();
+
             while (number != 0)
             {
+                
                 number = GenNumber();
+                if(number == 0)
+                {
+                    break;
+                }
                 sum = sum + number;
+
+                dealerSum += rnd.Next(1, 11);
+
                 Console.WriteLine("Pasreizeja summa ir " + sum);
+                Console.WriteLine("Dileris- " + dealerSum);
+
+                if (sum > 21)
+                {
+                    break;
+                }
+
+                if(dealerSum > 21)
+                {
+                    break;
+                }
+
+            }
+
+            if ( sum > 21 || dealerSum > sum && dealerSum < 22)
+            {
+                Console.WriteLine("Dileris uzvar");
+            }else if(dealerSum > 21 || dealerSum < sum && sum < 22)
+            {
+                Console.WriteLine("Speletajs uzvar");
+            }
+            else
+            {
+                Console.WriteLine("Neizskirts!");
             }
 
             Console.WriteLine("Summa ir " + sum);
