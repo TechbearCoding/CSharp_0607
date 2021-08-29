@@ -6,52 +6,60 @@ namespace Day9_BackToSchool
     {
         static void Main(string[] args)
         {
-            int number = -1;
-            int sum = 0;
-
-            int dealerSum = 0;
-            Random rnd = new Random();
-
-            while (number != 0)
+            while ()
             {
-                
-                number = GenNumber();
-                if(number == 0)
+                int number = -1;
+                int sum = 0;
+
+                int dealerSum = 0;
+                Random rnd = new Random();
+
+                while (number != 0)
                 {
-                    break;
+
+                    number = GenNumber();
+                    if (number == 0)
+                    {
+                        break;
+                    }
+                    sum = sum + number;
+
+                    if (dealerSum < 17)
+                    {
+                        dealerSum += rnd.Next(1, 11);
+                    }
+
+                    Console.WriteLine("Pasreizeja summa ir " + sum);
+                    Console.WriteLine("Dileris- " + dealerSum);
+
+                    if (sum > 21)
+                    {
+                        break;
+                    }
+
+                    if (dealerSum > 21)
+                    {
+                        break;
+                    }
+
                 }
-                sum = sum + number;
 
-                dealerSum += rnd.Next(1, 11);
-
-                Console.WriteLine("Pasreizeja summa ir " + sum);
-                Console.WriteLine("Dileris- " + dealerSum);
-
-                if (sum > 21)
+                if (sum > 21 || dealerSum > sum && dealerSum < 22)
                 {
-                    break;
+                    Console.WriteLine("Dileris uzvar");
                 }
-
-                if(dealerSum > 21)
+                else if (dealerSum > 21 || dealerSum < sum && sum < 22)
                 {
-                    break;
+                    Console.WriteLine("Speletajs uzvar");
+                }
+                else
+                {
+                    Console.WriteLine("Neizskirts!");
                 }
 
+                Console.WriteLine("Summa ir " + sum);
             }
-
-            if ( sum > 21 || dealerSum > sum && dealerSum < 22)
-            {
-                Console.WriteLine("Dileris uzvar");
-            }else if(dealerSum > 21 || dealerSum < sum && sum < 22)
-            {
-                Console.WriteLine("Speletajs uzvar");
-            }
-            else
-            {
-                Console.WriteLine("Neizskirts!");
-            }
-
-            Console.WriteLine("Summa ir " + sum);
+           
         }
 
         static int GenNumber()
