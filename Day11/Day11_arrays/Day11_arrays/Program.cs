@@ -6,7 +6,28 @@ namespace Day11_arrays
     {
         static void Main(string[] args)
         {
-            Piemers1();
+            Uzdevums2();
+        }
+
+        static void Uzdevums2()
+        {
+            Console.WriteLine("Ievadiet masiva garumu!");
+            int len = Convert.ToInt32(Console.ReadLine());
+
+            String[] arrayOfStrings = new String[len];
+
+            for (int i = 0; i < len; i++)
+            {
+                Console.WriteLine("Ievadiet " + i + ". vertibu!");
+                arrayOfStrings[i] = Console.ReadLine();
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < len; i++)
+            {
+                Console.Write(arrayOfStrings[i] + " ");
+            }
+
         }
 
         static void Piemers1()
