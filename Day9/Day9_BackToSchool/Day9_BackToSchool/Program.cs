@@ -6,7 +6,8 @@ namespace Day9_BackToSchool
     {
         static void Main(string[] args)
         {
-            while ()
+            String choice = "";
+            while (choice.ToUpper() != "N")
             {
                 int number = -1;
                 int sum = 0;
@@ -58,8 +59,13 @@ namespace Day9_BackToSchool
                 }
 
                 Console.WriteLine("Summa ir " + sum);
+
+
+                Console.WriteLine("Vai velaties turpinat? Y/N");
+                choice = Console.ReadLine();
             }
-           
+
+
         }
 
         static int GenNumber()
