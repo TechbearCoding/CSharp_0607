@@ -7,7 +7,11 @@ namespace Day13_lists
     {
         static void Main(string[] args)
         {
-            Piemers();
+            //Samples2.SampleOutput();
+
+            int result = Samples2.SampleSum(1, 2);
+            Console.WriteLine(result);
+           
         }
 
         static void Piemers()
@@ -23,8 +27,8 @@ namespace Day13_lists
 
             a.RemoveAt(0);
 
-
-            for (int i = 0; i < a.Count; i++)
+            
+            for(int i = 0; i < a.Count; i++)
             {
                 Console.WriteLine(a[i]);
             }
