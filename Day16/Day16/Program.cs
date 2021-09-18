@@ -38,6 +38,7 @@ namespace Day16
             Console.WriteLine("OK!!!");
         }
 
+
         static bool IsNumberThere(int number)
         {
             for (int j = 0; j < gen.Count; j++)
@@ -49,5 +50,6 @@ namespace Day16
             }
             return false;
         }
+
     }
 }
