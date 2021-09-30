@@ -19,11 +19,19 @@ namespace Day17_GUI
 
         private void BtnDemo_Click(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(EditNumber1.Text);
-            int b = Convert.ToInt32(EditNumber2.Text);
+            try
+            {
+                int a = Convert.ToInt32(EditNumber1.Text);
+                int b = Convert.ToInt32(EditNumber2.Text);
 
-            int c = a + b;
-            LblResult.Text = Convert.ToString(c);
+                int c = a + b;
+                LblResult.Text = Convert.ToString(c);
+            }
+            catch
+            {
+                LblResult.Text = "Error!";
+            }
+
         }
     }
 }
