@@ -39,6 +39,7 @@ namespace Day19_homework
             this.btnDel3 = new System.Windows.Forms.Button();
             this.btnAdd3 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -134,11 +135,22 @@ namespace Day19_homework
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(555, 542);
+            this.label1.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 788);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnDel3);
             this.Controls.Add(this.btnAdd3);
@@ -152,6 +164,7 @@ namespace Day19_homework
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,6 +180,7 @@ namespace Day19_homework
         private System.Windows.Forms.Button btnDel3;
         private System.Windows.Forms.Button btnAdd3;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

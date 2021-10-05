@@ -71,6 +71,14 @@ namespace Day19_homework
             {
                 listView1.Items.Add(Notes[i]);
             }
+
+            String sum = "";
+            for (int i = 0; i < Notes.Count; i++)
+            {
+                sum += Notes[i] + " ";
+            }
+
+            label1.Text = sum;
         }
 
         private bool IsPresent(String txt)
