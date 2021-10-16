@@ -8,22 +8,23 @@ namespace Day23_OOP
 {
     class Student
     {
+        private String _name;
         public String name
         {
             get
             {
-                return name;
+                return _name;
             }
 
             set
             {
-                if (name.Length > 10) 
+                if (value.Length > 10) 
                 {
-                    name = "default";
+                    _name = "default";
                 }
                 else
                 {
-                     name = value;
+                     _name = value;
                 }
             }
         }
