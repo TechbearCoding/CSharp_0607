@@ -4,7 +4,7 @@
     LastName VARCHAR(20) NOT NULL,
     Course INT
  );
- 
+  
 INSERT INTO Students (FirstName, LastName, Course)
 VALUES ('Juris', 'New', 1);
  
