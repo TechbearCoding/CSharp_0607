@@ -22,12 +22,12 @@ VALUES
     ('ETF');
  
 UPDATE Students
-SET FacultyId = 1
-WHERE FacultyId = 1 AND FacultyId = 3;
+SET FacultyId = 2
+WHERE Students.StudentsId = 1 OR Students.StudentsId = 3;
 
 UPDATE Students
-SET FacultyId = 2
-WHERE FacultyId = 2 AND FacultyId = 9;
+SET FacultyId = 1
+WHERE Students.StudentsId = 2 OR Students.StudentsId = 9;
  
 SELECT * FROM Students;
  
@@ -37,3 +37,8 @@ SELECT Students.FirstName, Students.LastName, Faculties.FacultyName, Students.Co
 FROM Students, Faculties
 WHERE Students.FacultyId = Faculties.FacultyId
 AND Course = 2;
+
+
+SELECT Customers.FirstName, Customers.LastName, Employees.FirstName, Employees.LastName
+FROM Customers, Employees
+WHERE Customers.EmplyoeesId = Employees.EmplyoeesId;
