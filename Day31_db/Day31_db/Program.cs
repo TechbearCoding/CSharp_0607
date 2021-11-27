@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
 namespace Day31_db
@@ -7,11 +8,17 @@ namespace Day31_db
     {
         static void Main(string[] args)
         {
-            Connect();
+            List<Author> lst = Connect();
+            
+            foreach(Author a in lst)
+            {
+                Console.WriteLine(a.AuthorLastName);
+            }
         }
 
-        static void Connect()
+        static List<Author> Connect()
         {
+            List<Author> local = new List<Author>();
             var settings = new MySqlConnectionStringBuilder
             {
                 Server = "178.128.47.243",
@@ -27,15 +34,32 @@ namespace Day31_db
                 MySqlConnection conn = new MySqlConnection(settings.ConnectionString);
                 conn.Open();
 
-                Console.WriteLine("Connection successful");
+                String readCommand = "SELECT AuthorName, AuthorLastname FROM Books.Authors;";
+
+                MySqlCommand m = new MySqlCommand(readCommand, conn);
+                MySqlDataReader dataReader = m.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Author localObj = new Author();
+                    localObj.AuthorName = dataReader["AuthorName"].ToString();
+                    localObj.AuthorLastName = dataReader["AuthorLastName"].ToString();
+
+                    local.Add(localObj);
+                }
+
+                dataReader.Close();
+                conn.Close();
+                
             }
             catch
             {
                 Console.WriteLine("Connection failed!");
-
+                
             }
 
-
+            return local;
         }
     }
 }
