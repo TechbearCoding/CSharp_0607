@@ -15,6 +15,7 @@ namespace Day31_db
             {
                 conn.Open();
                 MySqlCommand insert = conn.GetConnetion().CreateCommand();
+
                 insert.CommandText = "INSERT INTO Authors(AuthorName, AuthorLastName) VALUES(@name, @lastName)";
                 insert.Parameters.AddWithValue("@name", firstName);
                 insert.Parameters.AddWithValue("@lastName", LastName);
@@ -25,7 +26,30 @@ namespace Day31_db
             catch
             {
                 Console.WriteLine("Connection failed!");
+            } 
+        }
+
+
+        public static void DeleteAuthor(int id, Connection conn)
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand delete = conn.GetConnetion().CreateCommand();
+
+                delete.CommandText = "DELETE FROM Authors WHERE AuthorId = @id";
+                delete.Parameters.AddWithValue("@id", id);
+
+                delete.ExecuteNonQuery();
+
+                conn.Close();
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection failed!");
+                Console.WriteLine(ex.Message);
+            }
+
         }
         public static List<Author> SelectAuthors(Connection conn)
         {
@@ -34,28 +58,31 @@ namespace Day31_db
             try
             {
                 conn.Open();
-                String readCommand = "SELECT AuthorName, AuthorLastname FROM Books.Authors;";
+                String readCommand = "SELECT AuthorId, AuthorName, AuthorLastname FROM Books.Authors;";
 
                 MySqlCommand m = new MySqlCommand(readCommand, conn.GetConnetion());
+
                 MySqlDataReader dataReader = m.ExecuteReader();
 
                 while (dataReader.Read())
                 {
 
-                    Author localObj = new Author();
-                    localObj.AuthorName = dataReader["AuthorName"].ToString();
-                    localObj.AuthorLastName = dataReader["AuthorLastName"].ToString();
+                    Author author = new Author();
 
-                    local.Add(localObj);
+                    author.Id = dataReader.GetInt32("AuthorId");
+                    author.AuthorName = dataReader.GetString("AuthorName");
+                    author.AuthorLastName = dataReader.GetString("AuthorLastName");
+
+                    local.Add(author);
                 }
 
                 dataReader.Close();
                 conn.Close();
             }
-            catch
+            catch (Exception ex)
             {
                 Console.WriteLine("Connection failed!");
-
+                Console.WriteLine(ex.Message);
             }
 
             return local;
